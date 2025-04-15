@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ai-books-front/static/css/main.4460e70f.css",
-    "main.js": "/ai-books-front/static/js/main.ee59dc67.js",
+    "main.js": "/ai-books-front/static/js/main.ce31d30b.js",
     "index.html": "/ai-books-front/index.html",
     "main.4460e70f.css.map": "/ai-books-front/static/css/main.4460e70f.css.map",
-    "main.ee59dc67.js.map": "/ai-books-front/static/js/main.ee59dc67.js.map"
+    "main.ce31d30b.js.map": "/ai-books-front/static/js/main.ce31d30b.js.map"
   },
   "entrypoints": [
     "static/css/main.4460e70f.css",
-    "static/js/main.ee59dc67.js"
+    "static/js/main.ce31d30b.js"
   ]
 }

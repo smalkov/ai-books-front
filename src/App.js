@@ -22,7 +22,7 @@ const Books = () => {
   // };
 
   // getUser();
-  return <div>User_id TG: {window.Telegram?.WebApp?.initDataUnsafe?.user};</div>;
+  return <div>User_id TG;</div>;
 };
 
 function App() {
