@@ -1,7 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+
 import { Header } from "./components/Header/Header.tsx";
 import { Footer } from "./components/Footer/Footer.tsx";
+import { About } from "./components/About/About.tsx";
 
 import "./App.css";
 
@@ -12,7 +14,7 @@ function App() {
 
       <div className="App">
         <Routes>
-          <Route path="/about" element={<div>About</div>} />
+          <Route path="/about" element={<About />} />
           <Route path="/" element={<div>ups</div>} />
         </Routes>
       </div>

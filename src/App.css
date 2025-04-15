@@ -6,5 +6,7 @@
 }
 
 .App {
+  background-color: #f3f6f4;
   padding: 10px;
+  height: 100%;
 }

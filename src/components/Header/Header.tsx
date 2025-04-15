@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
+import Menu from "@mui/material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 
 import "./Header.css";
@@ -53,8 +53,18 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 export const Header = () => {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
-    <AppBar position="static">
+    <AppBar position="static" color="secondary">
       {/* <nav>
         <ul className="wrapper">
           <li>
@@ -66,11 +76,34 @@ export const Header = () => {
         </ul>
       </nav> */}
       <Toolbar>
-        <IconButton size="large" edge="start" color="inherit" aria-label="open drawer" sx={{ mr: 2 }}>
+        <IconButton
+          size="large"
+          edge="start"
+          color="inherit"
+          aria-label="open drawer"
+          sx={{ mr: 2 }}
+          onClick={handleClick}
+        >
           <MenuIcon />
         </IconButton>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+        >
+          <Link to="/" onClick={handleClose}>
+            Home
+          </Link>
+          <Link to="/about" onClick={handleClose}>
+            About
+          </Link>
+        </Menu>
         <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
-          MUI
+          AI Books
         </Typography>
         <Search>
           <SearchIconWrapper>
