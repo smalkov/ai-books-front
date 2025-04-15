@@ -65,16 +65,6 @@ export const Header = () => {
 
   return (
     <AppBar position="static" color="secondary">
-      {/* <nav>
-        <ul className="wrapper">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-      </nav> */}
       <Toolbar>
         <IconButton
           size="large"
@@ -95,12 +85,14 @@ export const Header = () => {
             "aria-labelledby": "basic-button",
           }}
         >
-          <Link to="/" onClick={handleClose}>
-            Home
-          </Link>
-          <Link to="/about" onClick={handleClose}>
-            About
-          </Link>
+          <div className="headerLinksWrapper">
+            <Link className="headerLinksItem" to="/" onClick={handleClose}>
+              Home
+            </Link>
+            <Link className="headerLinksItem" to="/books" onClick={handleClose}>
+              Books
+            </Link>
+          </div>
         </Menu>
         <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
           AI Books

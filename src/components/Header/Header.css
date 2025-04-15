@@ -1,0 +1,11 @@
+.headerLinksWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.headerLinksItem {
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
