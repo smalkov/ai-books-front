@@ -1,17 +1,23 @@
-import { useState } from "react";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { Header } from "./components/Header/Header.tsx";
+import { Footer } from "./components/Footer/Footer.tsx";
+
 import "./App.css";
-
-const Books = () => {
-  // const [ids, setIds] = useState(null);
-
-  // getUser();
-  return <div>User_id TG;</div>;
-};
 
 function App() {
   return (
-    <div className="App">
-      <Books />
+    <div className="appWrapper">
+      <Header />
+
+      <div className="App">
+        <Routes>
+          <Route path="/about" element={<div>About</div>} />
+          <Route path="/" element={<div>ups</div>} />
+        </Routes>
+      </div>
+
+      <Footer />
     </div>
   );
 }

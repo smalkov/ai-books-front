@@ -1,4 +1,10 @@
+.appWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
 .App {
-  text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
