@@ -2,7 +2,7 @@
   "name": "front",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://smalkov.github.io/ai-books",
+  "homepage": "https://smalkov.github.io/ai-books-front",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
