@@ -1,63 +1,47 @@
-import React from "react";
+import React, { memo } from "react";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Paper from "@mui/material/Paper";
+import { observer } from "mobx-react-lite";
 
 import "./Books.css";
+import { BooksStore } from "./state.ts";
 
-const mock = [
+const columns: GridColDef[] = [
   {
-    id: "01",
-    title: "Deepstate",
-    description: "Описание",
-    author: "Alan Wake",
+    field: "key4",
+    headerName: "Название",
+    flex: 1,
   },
   {
-    id: "02",
-    title: "Uins",
-    description: "Описание2",
-    author: "Ron Gake",
+    field: "key17",
+    headerName: "Описание",
+    flex: 2,
   },
   {
-    id: "03",
-    title: "Pors",
-    description: "Описание3",
-    author: "Dan Fake",
+    field: "key3",
+    headerName: "Дата",
+    flex: 1,
   },
 ];
 
-export const Books = () => {
-  const data = mock;
-
-  const columns: GridColDef[] = [
-    {
-      field: "title",
-      headerName: "Название",
-      width: 140,
-    },
-    {
-      field: "description",
-      headerName: "Описание",
-      width: 140,
-    },
-    {
-      field: "author",
-      headerName: "Автор",
-      width: 140,
-    },
-  ];
-
-  const paginationModel = { page: 0, pageSize: 5 };
+const BooksProto = observer(({ store }: any) => {
+  console.log("store", store);
 
   return (
     <Paper sx={{ height: 400, width: "100%" }}>
       <DataGrid
-        rows={data}
+        pagination
+        rows={store.books}
         columns={columns}
-        initialState={{ pagination: { paginationModel } }}
-        pageSizeOptions={[5, 10]}
+        initialState={{ pagination: { paginationModel: { page: 0, pageSize: 50 } } }}
+        pageSizeOptions={[50, 100]}
         checkboxSelection
         sx={{ border: 0 }}
+        getRowId={(data) => data?.key2}
       />
     </Paper>
   );
-};
+});
+
+const store = new BooksStore();
+export const Books = memo(() => <BooksProto store={store} />);

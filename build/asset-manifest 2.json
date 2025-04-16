@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ai-books-front/static/css/main.4460e70f.css",
+    "main.js": "/ai-books-front/static/js/main.f9f96830.js",
+    "index.html": "/ai-books-front/index.html",
+    "main.4460e70f.css.map": "/ai-books-front/static/css/main.4460e70f.css.map",
+    "main.f9f96830.js.map": "/ai-books-front/static/js/main.f9f96830.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4460e70f.css",
+    "static/js/main.f9f96830.js"
+  ]
+}
