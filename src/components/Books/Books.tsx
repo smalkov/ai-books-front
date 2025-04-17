@@ -39,6 +39,7 @@ const BooksProto = observer(({ store }: any) => {
         sx={{ border: 0 }}
         getRowId={(data) => data?.key2}
       />
+      table
     </Paper>
   );
 });
