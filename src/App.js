@@ -15,8 +15,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/ai-books-front/books" element={<Books />} />
-          <Route path="/ai-books-front" element={<div>ups</div>} />
-          <Route path="/" element={<div>ups</div>} />
+          <Route path="/ai-books-front" element={<Books />} />
+          <Route path="/" element={<Books />} />
         </Routes>
       </div>
 
