@@ -86,10 +86,10 @@ export const Header = () => {
           }}
         >
           <div className="headerLinksWrapper">
-            <Link className="headerLinksItem" to="/" onClick={handleClose}>
+            <Link className="headerLinksItem" to="/ai-books-front/" onClick={handleClose}>
               Home
             </Link>
-            <Link className="headerLinksItem" to="/books" onClick={handleClose}>
+            <Link className="headerLinksItem" to="/ai-books-front/books" onClick={handleClose}>
               Books
             </Link>
           </div>
