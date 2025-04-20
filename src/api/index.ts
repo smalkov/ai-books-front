@@ -1,13 +1,9 @@
 import axios from "axios";
-const BASE_URL = "https://0bf2-94-131-15-230.ngrok-free.app";
+const BASE_URL = "http://0.0.0.0:8000";
 
-export const getBooks = async (page = 1, limit = 50) => {
+export const getBooks = async (query?: string) => {
   return axios
-    .get(`${BASE_URL}/api/libbooks?page=${page}&limit=${limit}`, {
-      headers: {
-        "ngrok-skip-browser-warning": "true",
-      },
-    })
+    .get(`${BASE_URL}/search?query=${query}`)
     .then((res) => {
       console.log("res", res);
       return res?.data;

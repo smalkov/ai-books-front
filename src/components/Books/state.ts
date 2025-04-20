@@ -9,23 +9,35 @@ export class BooksStore {
     makeObservable(this, {
       books: observable,
       total: observable,
-      getBooks: action,
+      getDefaultBooks: action,
+      findBooks: action,
     });
 
-    this.getBooks();
+    this.getDefaultBooks();
   }
 
-  async getBooks() {
+  async getDefaultBooks() {
     try {
-      const data = await getBooks();
+      const data = await getBooks("Маяковский");
       console.log("getBooks data", data);
 
       if (data) {
-        this.books = data?.data;
-        this.total = data?.total;
+        this.books = data;
       }
     } catch {
       console.log("FAILED getBooks in store");
+    }
+  }
+
+  async findBooks(name: string) {
+    try {
+      const data = await getBooks(name);
+
+      if (data) {
+        this.books = data;
+      }
+    } catch (e) {
+      console.log("FAILED findBooks in store");
     }
   }
 }
