@@ -2,6 +2,7 @@ import React, { memo, useState } from "react";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Paper from "@mui/material/Paper";
 import { observer } from "mobx-react-lite";
+import { Skeleton } from "@mui/material";
 
 import "./Books.css";
 import { BooksStore } from "./state.ts";
@@ -12,6 +13,7 @@ const Image = ({ value }) => {
 
   return (
     <>
+      {!load && <Skeleton variant="rectangular" width={40} height={60} />}
       <img
         src={value}
         alt="cover"
