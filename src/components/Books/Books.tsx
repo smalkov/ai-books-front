@@ -8,6 +8,21 @@ import "./Books.css";
 import { BooksStore } from "./state.ts";
 import { Button } from "@mui/material";
 
+const Image = ({ value }) => {
+  const [load, setLoad] = useState(false);
+
+  return (
+    <>
+      <img
+        src={value}
+        alt="cover"
+        onLoad={() => setLoad(true)}
+        style={{ width: 40, height: 60, objectFit: "cover", display: load ? "block" : "none" }}
+      />
+    </>
+  );
+};
+
 const columns: GridColDef[] = [
   // {
   //   field: "id",
@@ -33,11 +48,7 @@ const columns: GridColDef[] = [
     field: "cover",
     headerName: "Обложка",
     flex: 2,
-    renderCell: ({ value }) => (
-      <>
-        <img src={value} alt="cover" style={{ width: 40, height: 60, objectFit: "cover" }} />
-      </>
-    ),
+    renderCell: ({ value }) => <Image value={value} />,
   },
   {
     field: "content",
