@@ -11,12 +11,12 @@ const columns: GridColDef[] = [
   {
     field: "id",
     headerName: "Айди",
-    flex: 1,
+    flex: 0.5,
   },
   {
     field: "title",
     headerName: "Название",
-    flex: 2,
+    flex: 5,
   },
 ];
 
@@ -26,8 +26,18 @@ const BooksProto = observer(({ store }: any) => {
 
   return (
     <Paper sx={{ height: 400, width: "100%" }}>
-      <input onChange={(e) => setFindName(e.target.value)} />
-      <Button onClick={() => store.findBooks(findName)}>find</Button>
+      <div className="booksInput">
+        <input value={findName} onChange={(e) => setFindName(e.target.value)} />
+        <Button
+          onClick={async () => {
+            await store.findBooks(findName);
+
+            setFindName("");
+          }}
+        >
+          find
+        </Button>
+      </div>
       <DataGrid
         pagination
         rows={store.books}
