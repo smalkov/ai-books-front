@@ -10,7 +10,7 @@ import { Button } from "@mui/material";
 const columns: GridColDef[] = [
   {
     field: "id",
-    headerName: "Айди",
+    headerName: "ID flibusta",
     flex: 0.5,
   },
   {
