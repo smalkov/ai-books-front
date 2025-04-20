@@ -30,6 +30,12 @@ const columns: GridColDef[] = [
   //   flex: 0.5,
   // },
   {
+    field: "cover",
+    headerName: "Обложка",
+    flex: 0.4,
+    renderCell: ({ value }) => <Image value={value} />,
+  },
+  {
     field: "title",
     headerName: "Название",
     flex: 2,
@@ -43,12 +49,6 @@ const columns: GridColDef[] = [
     field: "genres",
     headerName: "Жанры",
     flex: 2,
-  },
-  {
-    field: "cover",
-    headerName: "Обложка",
-    flex: 2,
-    renderCell: ({ value }) => <Image value={value} />,
   },
   {
     field: "content",
