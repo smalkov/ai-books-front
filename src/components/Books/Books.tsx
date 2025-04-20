@@ -2,20 +2,46 @@ import React, { memo, useState } from "react";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Paper from "@mui/material/Paper";
 import { observer } from "mobx-react-lite";
+import { Skeleton } from "@mui/material";
 
 import "./Books.css";
 import { BooksStore } from "./state.ts";
 import { Button } from "@mui/material";
 
 const columns: GridColDef[] = [
-  {
-    field: "id",
-    headerName: "ID flibusta",
-    flex: 0.5,
-  },
+  // {
+  //   field: "id",
+  //   headerName: "ID flibusta",
+  //   flex: 0.5,
+  // },
   {
     field: "title",
     headerName: "Название",
+    flex: 2,
+  },
+  {
+    field: "authors",
+    headerName: "Авторы",
+    flex: 2,
+  },
+  {
+    field: "genres",
+    headerName: "Жанры",
+    flex: 2,
+  },
+  {
+    field: "cover",
+    headerName: "Обложка",
+    flex: 2,
+    renderCell: ({ value }) => (
+      <>
+        <img src={value} alt="cover" style={{ width: 40, height: 60, objectFit: "cover" }} />
+      </>
+    ),
+  },
+  {
+    field: "content",
+    headerName: "Описание",
     flex: 5,
   },
 ];
